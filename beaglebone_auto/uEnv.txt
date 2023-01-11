@@ -1,0 +1,8 @@
+bootpartition=mmcblk0p2
+console=ttyS0,115200n8
+loadaddr=0x80000000
+enable_uboot_overlays=1
+fit_config=wireless
+set_bootargs=setenv bootargs console=${console} capemrg.enable_partno=BB-UART4 bone_capemrg.uboot_capemrg_enabled=1 cape_universal=enable root=/dev/${bootpartition} rw rootfstype=ext4 rootwait
+loadimage=load mmc 0:1 ${loadaddr} bb_fit_img_blob.itb
+uenvcmd=run set_bootargs;run loadimage;bootm ${loadaddr}#${fit_config}

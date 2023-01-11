@@ -1,0 +1,1 @@
+user -1 users -1 =pass /home/user /bin/sh - Main user

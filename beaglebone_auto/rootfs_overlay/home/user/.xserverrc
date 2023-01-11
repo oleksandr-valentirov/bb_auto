@@ -1,0 +1,4 @@
+#!/bin/sh
+
+export DISPLAY=:0
+exec /usr/bin/Xorg -nolisten tcp "$@" vt$XDG_VTNR
